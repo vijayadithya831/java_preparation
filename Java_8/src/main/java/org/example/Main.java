@@ -12,6 +12,8 @@ public class Main {
         List<Integer> resultList = integerList.stream()
                 .filter(x -> x%2 == 0)
                 .toList();
+
+        System.out.println("This is the Result List");
         System.out.println("resultList: " + resultList);
     }
 }
