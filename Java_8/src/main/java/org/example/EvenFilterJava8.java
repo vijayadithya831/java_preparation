@@ -3,7 +3,7 @@ package org.example;
 
 import java.util.*;
 
-public class Main {
+public class EvenFilterJava8 {
 
     public static void main(String[] args) {
 
