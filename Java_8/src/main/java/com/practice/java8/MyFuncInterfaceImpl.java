@@ -1,4 +1,4 @@
-package org.example;
+package com.practice.java8;
 
 @FunctionalInterface
 interface MyFuncInterface {

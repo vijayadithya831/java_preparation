@@ -20,3 +20,16 @@
 * It is mainly used to implement Functional Interfaces.
 
 `For code reference for functional interface and lambda expressions. refer MyFuncInterfaceImpl.java`
+
+##### Method vs Lambda
+
+| Method                       | Lambda                                                                                                                                                                                      |
+|------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Should Have a name           | Doesnt need a name                                                                                                                                                                          |
+| Should have a parameter list | Defined in interface, must follow that pattern                                                                                                                                              |
+| Should have a body           | Should have a body                                                                                                                                                                          |
+| Should have a Return type    | No need to mention the return type, but may or may not return a value, based on the method signature in the interface. Also, Java 8+ compiler infers the return type of the implementation. |
+
+##### Lambda Syntax
+`() -> {}`
+

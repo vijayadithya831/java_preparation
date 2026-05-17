@@ -1,4 +1,4 @@
-package org.example;
+package com.practice.java8;
 // Given a list of integers, find out all the even numbers that exist in the list using Stream functions?
 
 import java.util.*;
