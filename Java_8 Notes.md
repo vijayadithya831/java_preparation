@@ -11,7 +11,7 @@
 ### Functional Interfacs
 
 * An interface which contains only one abstract method.
-*
+* Can contain any number of abstract and default methods, but can contain only one abstract method.
 
 ### Lambda Expressions
 

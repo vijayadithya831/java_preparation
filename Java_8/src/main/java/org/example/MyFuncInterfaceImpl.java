@@ -4,8 +4,8 @@ package org.example;
 interface MyFuncInterface {
     void product(int a, int b);
 
-    default void print() {
-        System.out.println("Hello World");
+    default void print(String text) {
+        System.out.println("Printing Text: " + text);
     }
 
     static void  printStatic() {
@@ -15,9 +15,11 @@ interface MyFuncInterface {
 
  public class MyFuncInterfaceImpl {
     public static void main(String[] args) {
-        MyFuncInterface func = (a,b) -> { System.out.println(a*b); };
+        MyFuncInterface func = (a,b) -> {
+            System.out.println("Product: " + a*b);
+        };
         func.product(10,23);
-        func.print();
+        func.print("Hellow Brotha!");
         MyFuncInterface.printStatic();
     }
  }
