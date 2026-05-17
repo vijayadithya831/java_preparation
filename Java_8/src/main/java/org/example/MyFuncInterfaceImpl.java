@@ -4,6 +4,10 @@ package org.example;
 interface MyFuncInterface {
     void product(int a, int b);
 
+    default void printHello() {
+        System.out.println("Hello!");
+    }
+
     default void print(String text) {
         System.out.println("Printing Text: " + text);
     }
@@ -19,6 +23,7 @@ interface MyFuncInterface {
             System.out.println("Product: " + a*b);
         };
         func.product(10,23);
+        func.printHello();
         func.print("Hellow Brotha!");
         MyFuncInterface.printStatic();
     }
