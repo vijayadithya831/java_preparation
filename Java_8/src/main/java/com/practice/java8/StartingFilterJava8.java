@@ -1,19 +1,21 @@
-package org.example;
-// Given a list of integers, find out all the even numbers that exist in the list using Stream functions?
+package com.practice.java8;
+
+// Given a list of integers, find out all the numbers starting with 1 using Stream functions?
 
 import java.util.*;
 
-public class EvenFilterJava8 {
+public class StartingFilterJava8 {
 
     public static void main(String[] args) {
 
         List<Integer> integerList = Arrays.asList(10,15,8,49,25,98,32);
 
         List<Integer> resultList = integerList.stream()
-                .filter(x -> x%2 == 0)
+                .map(x -> x+"")
+                .filter(x -> x.startsWith("1"))
+                .map(Integer::parseInt)
                 .toList();
 
-        System.out.println("This is the Result List");
         System.out.println("resultList: " + resultList);
     }
 }
