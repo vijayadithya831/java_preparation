@@ -47,3 +47,11 @@
 The process of running multiple threads at the same time is called multithreading. For that we have to extend the Thread class in our main class (or implement Runnable interface to enable inheritance of other classes for our main class). After the inheritance (or implementation), we have to override the run method present in the Runnable functional Interface.
 
 Even if one of the threads run into an exception during runtime, the other threads will not be affected at all and they proceed to the completion of their individual execution.
+
+
+##### Threads, their methods and their purposes.
+
+* start() => used to start a thread (or multiple threads at the same time)
+* run() => used to implement what the thread wants to do. Part of the Runnable functional interface.
+* join() => waits for the thread to die. Which means, the program just waits until the currently running thread to complete execution before moving on to the next thread. (defeats the whole concept of multithreading) throws InterruptedException, so must handle the exception.
+*
