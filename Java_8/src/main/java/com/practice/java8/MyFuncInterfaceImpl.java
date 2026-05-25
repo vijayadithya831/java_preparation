@@ -1,5 +1,7 @@
 package com.practice.java8;
 
+import java.util.function.Function;
+
 @FunctionalInterface
 interface MyFuncInterface {
     void product(int a, int b);
