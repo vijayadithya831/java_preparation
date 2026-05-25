@@ -48,6 +48,11 @@ The process of running multiple threads at the same time is called multithreadin
 
 Even if one of the threads run into an exception during runtime, the other threads will not be affected at all and they proceed to the completion of their individual execution.
 
+##### Race conditions in Threads.
+
+Race condition occurs when muiltiple threads are attempting to change the value if the same variable at the same time.
+
+##### Different States of Threads.
 
 ##### Threads, their methods and their purposes.
 

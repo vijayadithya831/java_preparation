@@ -1,10 +1,10 @@
 package com.practice.java8;
 
 //public class MultiThreadingFull extends Thread {
-public class MultiThreadingFull implements Runnable {
+public class MultiThreading implements Runnable {
 
     private int threadNo;
-    public MultiThreadingFull(int threadNo) {
+    public MultiThreading(int threadNo) {
         this.threadNo = threadNo;
     }
 
@@ -24,7 +24,7 @@ public class MultiThreadingFull implements Runnable {
     public static void main(String[] args) {
 
         for(int i=0;i<=3;i++) {
-            MultiThreadingFull object1 = new MultiThreadingFull(i);
+            MultiThreading object1 = new MultiThreading(i);
             Thread t1 = new Thread(object1);
             t1.start();
         }
