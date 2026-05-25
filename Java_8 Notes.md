@@ -35,3 +35,28 @@
 ##### Lambda Syntax
 
 `() -> {}`
+
+
+### Multi-Threading
+
+##### Thread
+
+* A thread is a smallest unit of a task.
+* We can run multiple threads at the same time unlike a normal program. And the threads can share the same resources (Resource sharing is done by scheduling algorithms).
+
+The process of running multiple threads at the same time is called multithreading. For that we have to extend the Thread class in our main class (or implement Runnable interface to enable inheritance of other classes for our main class). After the inheritance (or implementation), we have to override the run method present in the Runnable functional Interface.
+
+Even if one of the threads run into an exception during runtime, the other threads will not be affected at all and they proceed to the completion of their individual execution.
+
+##### Race conditions in Threads.
+
+Race condition occurs when muiltiple threads are attempting to change the value if the same variable at the same time.
+
+##### Different States of Threads.
+
+##### Threads, their methods and their purposes.
+
+* start() => used to start a thread (or multiple threads at the same time)
+* run() => used to implement what the thread wants to do. Part of the Runnable functional interface.
+* join() => waits for the thread to die. Which means, the program just waits until the currently running thread to complete execution before moving on to the next thread. (defeats the whole concept of multithreading) throws InterruptedException, so must handle the exception.
+*
