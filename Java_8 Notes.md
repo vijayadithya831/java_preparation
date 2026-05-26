@@ -12,6 +12,14 @@
 
 * An interface which contains only one abstract method.
 * Can contain any number of abstract and default methods, but can contain only one abstract method.
+* A method in a functional interface is by default abstract, so we dont need to explicitly mention the abstract keyword in an interface.
+
+#### The 4 main Functional Interfaces
+
+* Function< T,R > => This interface has the method apply(T t) with return type R. Which means, it takes the input of type T and returns the value of type R. eg., if the interface is declared as Function<String, Integer>, the apply method takes the input parameter of type String and returns the output of type Integer.
+* Consumer< T > => this interface has the method accept(T t). Which means it takes the input of type T and return nothing. So the accept method would be of the return type 'void'.
+* Supplier < T > => this interface has the method get(). This get method does not require any input, but returns the value of the type T.
+* Predicate< T > => this interface has the method test(T t). Which means it takes the input of type T and returns the boolean output. We can pass a string and define a condition in the method implementation so that the test method tests whether the given input string passes the condition or not, hence returning the boolean result.
 
 ### [Lambda Expressions](https://www.geeksforgeeks.org/java/lambda-expressions-java-8/)
 
@@ -36,7 +44,6 @@
 
 `() -> {}`
 
-
 ### Multi-Threading
 
 ##### Thread
@@ -52,11 +59,29 @@ Even if one of the threads run into an exception during runtime, the other threa
 
 Race condition occurs when muiltiple threads are attempting to change the value if the same variable at the same time.
 
+If we have a situation which can end in a race condition, we can use synchronized keyword to the method we call to avoid race conditions. synchronized keyword makes sure that only one thread will be accessing the resources while forcing the other thread to wait.
+
 ##### Different States of Threads.
+
+* **New**
+* **Runnable**
+* **Running**
+* **Waiting/Block**
+* **Dead**
+
+##### Methods that change the state of the threads.
+
+* start() -> new to runnable
+* run() -> runnable to running
+* sleep(), wait() -> running to waiting/block
+* notify() -> waiting to runnable
+* stop() -> running and runnable to dead
 
 ##### Threads, their methods and their purposes.
 
 * start() => used to start a thread (or multiple threads at the same time)
 * run() => used to implement what the thread wants to do. Part of the Runnable functional interface.
 * join() => waits for the thread to die. Which means, the program just waits until the currently running thread to complete execution before moving on to the next thread. (defeats the whole concept of multithreading) throws InterruptedException, so must handle the exception.
-*
+* sleep() => gives the thread a buffer time before running again. We can set a fixed time in between two continuous thread calls using sleep method.
+* wait() and notify() => used to change the thread in to waiting state indefinitely until woken up again. While we are using wait() method, we gotta use notify() on the thread to wake up from waiting state. notify method will shift the thread from waiting to runnable state.
+* stop() => used to stop the thread from executing further. this method forces the thread into dead state.

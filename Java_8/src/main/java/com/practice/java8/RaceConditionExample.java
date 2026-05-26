@@ -26,7 +26,7 @@ package com.practice.java8;
 //    }
 //}
 
-// Commented out class3 and class4 coz we dont need them anymore after implementing lambda for runnable interface
+// Commented out class3 and class4 coz we don't need them anymore after implementing lambda for runnable interface
 
 class Counter {
     int count;
@@ -35,7 +35,7 @@ class Counter {
     }
 }
 
-public class RunnableLambdaExample {
+public class RaceConditionExample {
 
     public static void main(String[] args) throws  InterruptedException {
 
@@ -67,11 +67,13 @@ public class RunnableLambdaExample {
 
         System.out.println("count value: " + counter.count);
 
-//        System.out.println("Thread priority for obj1: " + obj1.getPriority());
-//        System.out.println("Thread priority for obj2: " + obj2.getPriority());
-//        System.out.println("Thread priority constant: " + Thread.MAX_PRIORITY);
-//        System.out.println("Thread priority constant: " + Thread.MIN_PRIORITY);
-//        System.out.println("Thread priority constant: " + Thread.NORM_PRIORITY);
+/*
+        System.out.println("Thread priority for obj1: " + obj1.getPriority());
+        System.out.println("Thread priority for obj2: " + obj2.getPriority());
+        System.out.println("Thread priority constant: " + Thread.MAX_PRIORITY);
+        System.out.println("Thread priority constant: " + Thread.MIN_PRIORITY);
+        System.out.println("Thread priority constant: " + Thread.NORM_PRIORITY);
+*/
 
     }
 
