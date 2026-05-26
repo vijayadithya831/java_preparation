@@ -13,7 +13,13 @@
 * An interface which contains only one abstract method.
 * Can contain any number of abstract and default methods, but can contain only one abstract method.
 * A method in a functional interface is by default abstract, so we dont need to explicitly mention the abstract keyword in an interface.
-*
+
+#### The 4 main Functional Interfaces
+
+* Function< T,R > => This interface has the method apply(T t) with return type R. Which means, it takes the input of type T and returns the value of type R. eg., if the interface is declared as Function<String, Integer>, the apply method takes the input parameter of type String and returns the output of type Integer.
+* Consumer< T > => this interface has the method accept(T t). Which means it takes the input of type T and return nothing. So the accept method would be of the return type 'void'.
+* Supplier < T > => this interface has the method get(). This get method does not require any input, but returns the value of the type T.
+* Predicate< T > => this interface has the method test(T t). Which means it takes the input of type T and returns the boolean output. We can pass a string and define a condition in the method implementation so that the test method tests whether the given input string passes the condition or not, hence returning the boolean result.
 
 ### [Lambda Expressions](https://www.geeksforgeeks.org/java/lambda-expressions-java-8/)
 
