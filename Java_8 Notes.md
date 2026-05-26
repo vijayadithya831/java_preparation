@@ -85,3 +85,7 @@ If we have a situation which can end in a race condition, we can use synchronize
 * sleep() => gives the thread a buffer time before running again. We can set a fixed time in between two continuous thread calls using sleep method.
 * wait() and notify() => used to change the thread in to waiting state indefinitely until woken up again. While we are using wait() method, we gotta use notify() on the thread to wake up from waiting state. notify method will shift the thread from waiting to runnable state.
 * stop() => used to stop the thread from executing further. this method forces the thread into dead state.
+
+### Method References.
+
+It is a special type of syntax used to further simplify the lambda expressions.
