@@ -102,4 +102,6 @@ If we have a situation which can end in a race condition, we can use synchronize
 ##### Further notes on method references
 
 * Implementing method references for static method is easy.. just remove the lambda parameters and just use :: instead of . while calling the method.
-* Implementing method references for instance method of an object is a bit confusing. There are some rules.
+* Implementing method references for instance method of an object is a bit confusing. There are some rules. While implementing, the functional interface which we are referring should contain the exact method signature as the instance method belonging to the class which we are accessing with the help of an object.
+* Implementing method reference to an instance method of an arbitrary object is nothing but accessing the methods of the predefined clases in java with the object created of that specific type. eg, `String s1 = "Hello"; Function<String, String> print = (s1) -> s1.toUpperCase();` the lambda part can be rewritten as, `Function<String, String> print = String::toUpperCase` It is because, the lambda is accepting one parameter and applying toUpperCase() method to that parameter and returning the value. So, instead of lambda, it can be replaced with method reference.
+*

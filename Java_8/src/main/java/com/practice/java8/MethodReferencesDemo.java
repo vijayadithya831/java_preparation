@@ -1,5 +1,6 @@
 package com.practice.java8;
 
+import java.util.*;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
@@ -30,12 +31,12 @@ public class MethodReferencesDemo {
         System.out.println(functionMethodReference.apply(49));
 
 //        BiFunction Lambda example
-        BiFunction<Integer, Integer, Integer> biFunctionLambda = (a,b) -> MethodReferencesDemo.add(a,b);
-        System.out.println(biFunctionLambda.apply(10,20));
+        BiFunction<Integer, Integer, Integer> biFunctionLambda = (a, b) -> MethodReferencesDemo.add(a, b);
+        System.out.println(biFunctionLambda.apply(10, 20));
 
 //        BiFunction Method Reference implementation
         BiFunction<Integer, Integer, Integer> biFunctionRef = MethodReferencesDemo::add;
-        System.out.println(biFunctionRef.apply(30,50));
+        System.out.println(biFunctionRef.apply(30, 50));
 
 //        2. Method reference to an instance method of a particular object.
         MethodReferencesDemo object1 = new MethodReferencesDemo();
@@ -57,8 +58,37 @@ public class MethodReferencesDemo {
         Function<String, String> stringMethodRef = String::toLowerCase;
         System.out.println(stringMethodRef.apply("SURPRISE MOTHERF*CKER!!"));
 
+        String[] strArray = {"A", "E", "I", "O", "U", "a", "e", "i", "o", "u"};
 
+        // sorting using lambda
+//        Arrays.sort(strArray, (s1, s2) -> s1.compareToIgnoreCase(s2));
+
+        // using method reference.
+        Arrays.sort(strArray, String::compareToIgnoreCase);
+
+
+        for (String str : strArray) {
+            System.out.print(str + ", ");
+        }
+        System.out.println();
+
+        // 4. Reference to a constructor.
+        List<String> fruits = new ArrayList<>();
+
+        fruits.add("Banana");
+        fruits.add("Apple");
+        fruits.add("Mango");
+        fruits.add("Watermelon");
+
+        Function<List<String>, Set<String>> setFunction = (input) -> new HashSet<>(input);
+        setFunction.apply(fruits);
+
+        System.out.println("fruits: " + setFunction.apply(fruits).getClass());
+
+        Function<List<String>, LinkedList<String>> setFunction1 = LinkedList::new;
+
+        setFunction1.apply(fruits);
+        System.out.println("fruits: " + setFunction1.apply(fruits).getClass());
 
     }
-
 }
