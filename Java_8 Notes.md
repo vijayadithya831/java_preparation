@@ -20,6 +20,7 @@
 * Consumer< T > => this interface has the method accept(T t). Which means it takes the input of type T and return nothing. So the accept method would be of the return type 'void'.
 * Supplier < T > => this interface has the method get(). This get method does not require any input, but returns the value of the type T.
 * Predicate< T > => this interface has the method test(T t). Which means it takes the input of type T and returns the boolean output. We can pass a string and define a condition in the method implementation so that the test method tests whether the given input string passes the condition or not, hence returning the boolean result.
+* For more Functional Interfaces present in java, [Click Here](https://www.educative.io/answers/a-list-of-all-the-functional-interfaces-in-java)
 
 ### [Lambda Expressions](https://www.geeksforgeeks.org/java/lambda-expressions-java-8/)
 
@@ -44,7 +45,7 @@
 
 `() -> {}`
 
-### Multi-Threading
+### [Multi-Threading](https://www.geeksforgeeks.org/java/multithreading-in-java/)
 
 ##### Thread
 
@@ -86,7 +87,7 @@ If we have a situation which can end in a race condition, we can use synchronize
 * wait() and notify() => used to change the thread in to waiting state indefinitely until woken up again. While we are using wait() method, we gotta use notify() on the thread to wake up from waiting state. notify method will shift the thread from waiting to runnable state.
 * stop() => used to stop the thread from executing further. this method forces the thread into dead state.
 
-### Method References.
+### [Method References](https://www.geeksforgeeks.org/java/java-method-references/)
 
 * Method reference is used to refer a method in a functional interface.
 * It is a compact and easy form of lambda expression.
@@ -104,4 +105,5 @@ If we have a situation which can end in a race condition, we can use synchronize
 * Implementing method references for static method is easy.. just remove the lambda parameters and just use :: instead of . while calling the method.
 * Implementing method references for instance method of an object is a bit confusing. There are some rules. While implementing, the functional interface which we are referring should contain the exact method signature as the instance method belonging to the class which we are accessing with the help of an object.
 * Implementing method reference to an instance method of an arbitrary object is nothing but accessing the methods of the predefined clases in java with the object created of that specific type. eg, `String s1 = "Hello"; Function<String, String> print = (s1) -> s1.toUpperCase();` the lambda part can be rewritten as, `Function<String, String> print = String::toUpperCase` It is because, the lambda is accepting one parameter and applying toUpperCase() method to that parameter and returning the value. So, instead of lambda, it can be replaced with method reference.
-*
+
+### [Optional Class](https://www.geeksforgeeks.org/java/java-8-optional-class/)
