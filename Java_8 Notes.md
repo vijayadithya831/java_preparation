@@ -88,4 +88,18 @@ If we have a situation which can end in a race condition, we can use synchronize
 
 ### Method References.
 
-It is a special type of syntax used to further simplify the lambda expressions.
+* Method reference is used to refer a method in a functional interface.
+* It is a compact and easy form of lambda expression.
+* Each time a lambda expression is used just to refer a method, then this method reference can be used instead.
+
+##### Types of method references.
+
+1. **Method Reference To Static Method** => Syntax: Class::staticMethodName
+2. **Reference to an instance method of a particular object** => Syntax: Object::instanceMethodName
+3. **Reference to an instance method of an arbitrary object of specific type** => Syntax: Class::instanceMethodName
+4. **Reference to a constructor** => Syntax: ClassName::new
+
+##### Further notes on method references
+
+* Implementing method references for static method is easy.. just remove the lambda parameters and just use :: instead of . while calling the method.
+* Implementing method references for instance method of an object is a bit confusing. There are some rules.
