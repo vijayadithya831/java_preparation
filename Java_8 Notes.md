@@ -107,3 +107,10 @@ If we have a situation which can end in a race condition, we can use synchronize
 * Implementing method reference to an instance method of an arbitrary object is nothing but accessing the methods of the predefined clases in java with the object created of that specific type. eg, `String s1 = "Hello"; Function<String, String> print = (s1) -> s1.toUpperCase();` the lambda part can be rewritten as, `Function<String, String> print = String::toUpperCase` It is because, the lambda is accepting one parameter and applying toUpperCase() method to that parameter and returning the value. So, instead of lambda, it can be replaced with method reference.
 
 ### [Optional Class](https://www.geeksforgeeks.org/java/java-8-optional-class/)
+
+* Java 8 has introduced Optional class in java.util package to handle NullPointerException elegantly.
+* This class can help in avoiding null checks and NullPointerException exceptions.
+* You can view Optional as a single-value container that either contains a value or doesn't (then, it is said to be empty).
+* Optional is a final class, meaning, we cannot extend optional class.
+
+Note to self: Optional class is NOT a replacement for any collections framework members. In fact, Optional itself isn't a member of the collections framework in java. It can contain at most one value or empty.
