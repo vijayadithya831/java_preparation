@@ -114,3 +114,9 @@ If we have a situation which can end in a race condition, we can use synchronize
 * Optional is a final class, meaning, we cannot extend optional class.
 
 Note to self: Optional class is NOT a replacement for any collections framework members. In fact, Optional itself isn't a member of the collections framework in java. It can contain at most one value or empty.
+
+##### Methods in optional class
+
+1. of() ->
+2. empty() -> This method basically returns the new object of the optional class.
+3. nullable()

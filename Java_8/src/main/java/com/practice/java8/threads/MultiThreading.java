@@ -1,4 +1,4 @@
-package com.practice.java8;
+package com.practice.java8.threads;
 
 //public class MultiThreadingFull extends Thread {
 public class MultiThreading implements Runnable {

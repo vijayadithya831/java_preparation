@@ -1,4 +1,4 @@
-package com.practice.java8;
+package com.practice.java8.threads;
 
 class Class1 implements Runnable {
     public void run() {

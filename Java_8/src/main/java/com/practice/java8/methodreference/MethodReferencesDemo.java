@@ -1,4 +1,4 @@
-package com.practice.java8;
+package com.practice.java8.methodreference;
 
 import java.util.*;
 import java.util.function.BiFunction;
