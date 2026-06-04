@@ -1,6 +1,4 @@
-package com.practice.java8;
-
-import java.util.function.Function;
+package com.practice.java8.functional;
 
 @FunctionalInterface
 interface MyFuncInterface {
