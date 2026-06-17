@@ -115,8 +115,12 @@ If we have a situation which can end in a race condition, we can use synchronize
 
 Note to self: Optional class is NOT a replacement for any collections framework members. In fact, Optional itself isn't a member of the collections framework in java. It can contain at most one value or empty.
 
-##### Methods in optional class
+##### Static Methods in optional class
 
-1. of() ->
-2. empty() -> This method basically returns the new object of the optional class.
-3. nullable()
+1. Optional.of(value) -> This method takes a value of any type, stores in an Optional object and returns the same to the variable when called. value should not be null, otherwise NullPointerException is thrown.
+2. Optional.empty() -> This method basically returns the new object of the optional class. If we print the empty object, Optional class's toString method is called and "Optional.empty" is written to the console.
+3. Optional.ofNnullable(value) -> As the name suggests, this class can choose between returning an empty Optional object or an Optional object holding some value based on the argument given to it. If the value is null, then Optional.empty, otherwile new Optional<>(value) is returned. It does not throw NullPointerException if null is passed as argument.
+
+##### Non-static Methods in optional class
+
+1. get() -> This method is applied to an object of the Optional class. It is used to retrieve the contents of the optional object.
