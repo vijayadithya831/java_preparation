@@ -115,8 +115,18 @@ If we have a situation which can end in a race condition, we can use synchronize
 
 Note to self: Optional class is NOT a replacement for any collections framework members. In fact, Optional itself isn't a member of the collections framework in java. It can contain at most one value or empty.
 
-##### Methods in optional class
+##### Static Methods in optional class
 
-1. of() ->
-2. empty() -> This method basically returns the new object of the optional class.
-3. nullable()
+1. Optional.of(value) -> This method takes a value of any type, stores in an Optional object and returns the same to the variable when called. value should not be null, otherwise NullPointerException is thrown.
+2. Optional.empty() -> This method basically returns the new object of the optional class. If we print the empty object, Optional class's toString method is called and "Optional.empty" is written to the console.
+3. Optional.ofNnullable(value) -> As the name suggests, this class can choose between returning an empty Optional object or an Optional object holding some value based on the argument given to it. If the value is null, then Optional.empty, otherwile new Optional<>(value) is returned. It does not throw NullPointerException if null is passed as argument.
+
+##### Non-static Methods in optional class
+
+1. get() -> This method is applied to an object of the Optional class. It is used to retrieve the contents of the optional object.
+2. orElse() -> This method is applied to an object of the Optional class. It takes a parameter of type Object. It is used when we dont know whether the optional contains a null value or not. If the optional has the value, then the value is returned. If the value is null, then the passed param of type Object is returned.
+3. orElseGet() ->  This method is applied to an object of the Optional class. It takes a Supplier functional interface as parameter.  It is used when we dont know whether the optional contains a null value or not. If the optional has the value, then the value is returned. If the value is null, then the supplier functional interface which can be passed as lambda, constructs the default value inside it (or returns it directly) can be returned.
+4. orElseThrow() ->  This method is applied to an object of the Optional class. It takes Supplier functional interface as parameter, which must throw an exception (existing or custom) if the value in the optional is null.
+5. isPresent() ->  This method is applied to an object of the Optional class. It checks whether the value inside the Optional is null and returns the boolean equivalant accordingly.
+6. ifPresent() ->  This method is applied to an object of the Optional class. It takes Consumer functional interface as parameter, which takes the value inside the optional as the lambda object and executes the void method defined in the lambda. Key difference is, the lambda inside the ifPresent method is executed when and only when the value inside the optional is not null.
+7. filter() ->  This method is applied to an object of the Optional class. It takes Predicate functional interface as parameter, which determines whether a condition is satisfied or not which is implemented in the lambda.
