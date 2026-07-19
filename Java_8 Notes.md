@@ -130,3 +130,4 @@ Note to self: Optional class is NOT a replacement for any collections framework 
 5. isPresent() ->  This method is applied to an object of the Optional class. It checks whether the value inside the Optional is null and returns the boolean equivalant accordingly.
 6. ifPresent() ->  This method is applied to an object of the Optional class. It takes Consumer functional interface as parameter, which takes the value inside the optional as the lambda object and executes the void method defined in the lambda. Key difference is, the lambda inside the ifPresent method is executed when and only when the value inside the optional is not null.
 7. filter() ->  This method is applied to an object of the Optional class. It takes Predicate functional interface as parameter, which determines whether a condition is satisfied or not which is implemented in the lambda.
+8. 

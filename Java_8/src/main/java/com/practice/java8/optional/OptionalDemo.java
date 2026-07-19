@@ -56,9 +56,6 @@ public class OptionalDemo {
         optionalString.filter(res -> res.contains("abc")).ifPresent(res -> System.out.println("res: " + res));
 
 
-
-
-
     }
 
 }
