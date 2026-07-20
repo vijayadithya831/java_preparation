@@ -51,12 +51,13 @@ public class OptionalDemo {
 
         // now with filter
 
-        Optional<String> optionalString = Optional.of("abc");
+        Optional<String> optionalString = Optional.of(" abc ");
 
-        optionalString.filter(res -> res.contains("abc")).ifPresent(res -> System.out.println("res: " + res));
-
-
-
+        optionalString
+                .filter(res -> res.contains("abc"))
+//                .map(res -> res.trim()) // lambda implementation, below is the method reference
+                .map(String::trim)
+                .ifPresent(res -> System.out.println("res: " + res));
 
 
     }
