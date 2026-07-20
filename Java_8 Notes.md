@@ -133,3 +133,20 @@ Note to self: Optional class is NOT a replacement for any collections framework 
 8. map() -> This method is applied to an object of the Optional class or used as an intermediate operation. It takes Function functional interface as parameter, which takes a value as input, processes the logic given as implementation (either lambda or method reference), produces the output, and maps the value to the same index as it gets from the input. Basically, we can use map method to transform a value in an Optional from one type to another type.
 
 ### [Default Methods in Interfaces](https://www.geeksforgeeks.org/java/default-methods-java/)
+
+##### Why do we need default method in interfaces?
+
+* An interface contains list of abstract methods which is supposed to be implemented by the implementing class. 
+* For a functional interface, it has only one method, and the classes implementing the functional interface **should** implement the abstract method present in it. 
+* Now, in a situation where a functional interface is implemented by a couple of classes, and we need an extra method in the interface, this is where default methods in the functional interface comes in. 
+* The implementation of the default method is given in the interface itself and is automatically available to all the implementing classes. 
+* We can call the method in whichever class we want, and it is optioanl to override them separately in the implementing class. 
+* This improves flexibility and backward compatibility.
+
+##### Writing a default method
+
+* We should use a **default** keyword.
+* Implementation should be given, otherwise gives us a compilation error.
+* Like any other method in an interface, they are implicitly public, no need to specify modifiers explicitly.
+
+### [Static Methods in Interfaces](https://www.geeksforgeeks.org/java/static-method-in-interface-in-java/)
