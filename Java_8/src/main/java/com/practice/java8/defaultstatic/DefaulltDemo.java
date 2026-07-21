@@ -14,6 +14,10 @@ interface Vehicle {
     default String turnAlarmOff() {
         return "Turning vehiocle alarm OFF!";
     }
+
+    static String getCompany() {
+        return "Volkswagen";
+    }
 }
 
 class Car implements Vehicle {
@@ -42,5 +46,7 @@ public class DefaulltDemo {
 
         System.out.println(vehicle.turnAlarmOn());
         System.out.println(vehicle.turnAlarmOff());
+
+        System.out.println(Vehicle.getCompany());
     }
 }
