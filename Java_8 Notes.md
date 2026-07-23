@@ -170,3 +170,10 @@ Note to self: Optional class is NOT a replacement for any collections framework 
 
 Stream => Filter => Sort => Map => Collect/Reduce
 
+#### Filter Method
+
+* It is an intermedaite method applied to a stream.
+* It takes Predicate functional interface (or a simple condition returning boolean) as parameter.
+* It consumes the stream, executes the predicate (or condition), and returns the filtered stream which only satisfies the defined condition.
+* Hence, the resultant stream contains either same stream or a reduced stream (or we can say, "filtered" stream).
+
