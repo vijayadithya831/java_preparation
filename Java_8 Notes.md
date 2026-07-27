@@ -150,3 +150,37 @@ Note to self: Optional class is NOT a replacement for any collections framework 
 * Like any other method in an interface, they are implicitly public, no need to specify modifiers explicitly.
 
 ### [Static Methods in Interfaces](https://www.geeksforgeeks.org/java/static-method-in-interface-in-java/)
+
+* Like the default methods, static methods can be given in an interface with a body.
+* But static method is different from other methods in an interface in one way. It **cannot** be overridden in the implementing class.
+* Static method's method signature is fixed. It can be accessed by the interface's name while calling the method. Because, The scope of the static method is limited to the interface in which it is defined.
+
+##### Writing a static method
+
+* We should use a **static** keyword.
+* Implementation should be given, otherwise gives us a compilation error.
+* Like any other method in an interface, they are implicitly public, no need to specify modifiers explicitly.
+
+### [Stream API](https://www.geeksforgeeks.org/java/stream-in-java/)
+
+* Stream represents a sequence of objects from a source, which supports aggregate operations.
+* We can use java.util.stream. It contains classes, interfaces and enums which allows us to perforam functionality-level operations on the elements.
+
+##### Steam working flow
+
+Stream => Filter => Sort => Map => Collect/Reduce
+
+#### Filter Method
+
+* It is an intermediate method applied to a stream.
+* It takes Predicate functional interface (or a simple condition returning boolean) as parameter.
+* It consumes the stream, executes the predicate (or condition), and returns the filtered stream which only satisfies the defined condition.
+* Hence, the resultant stream contains either same stream or a reduced stream (or we can say, "filtered" stream).
+
+#### Sorted Method
+
+* It is an intermediate method applied to a stream.
+* It takes either nothing or a Comparator/Comparable functional interface as parameter.
+* If the sorted method is called without any parameter, it returns the stream sorted in ascending order by default.
+* If parameter is passed, it consumes the stream, executes the Comparator/Comparable logic passed, and then sorts according to the conditions and returns the stream for collection.
+
