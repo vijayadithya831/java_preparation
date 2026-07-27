@@ -172,8 +172,15 @@ Stream => Filter => Sort => Map => Collect/Reduce
 
 #### Filter Method
 
-* It is an intermedaite method applied to a stream.
+* It is an intermediate method applied to a stream.
 * It takes Predicate functional interface (or a simple condition returning boolean) as parameter.
 * It consumes the stream, executes the predicate (or condition), and returns the filtered stream which only satisfies the defined condition.
 * Hence, the resultant stream contains either same stream or a reduced stream (or we can say, "filtered" stream).
+
+### Sorted Method
+
+* It is an intermediate method applied to a stream.
+* It takes either nothing or a Comparator/Comparable functional interface as parameter.
+* If the sorted method is called without any parameter, it returns the stream sorted in ascending order by default.
+* If parameter is passed, it consumes the stream, executes the Comparator/Comparable logic passed, and then sorts according to the conditions and returns the stream for collection.
 

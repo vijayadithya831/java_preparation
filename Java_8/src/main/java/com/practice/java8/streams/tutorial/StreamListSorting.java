@@ -16,7 +16,8 @@ public class StreamListSorting {
         fruits.add("Grapes");
         // Using Comparator.naturalOrder()/reverseOrder() methods
         fruits.stream()
-                .sorted(Comparator.reverseOrder())
+//                .sorted(Comparator.reverseOrder())
+                .sorted(Comparator.naturalOrder())
                 .forEach(System.out::println);
 
         System.out.println("*=*=*=*=*=*=*=*=*=*=*=*=*=*=");
@@ -25,6 +26,11 @@ public class StreamListSorting {
                 .sorted((o1, o2) -> o2.compareTo(o1))
                 .forEach(System.out::println);
 
+        System.out.println("*=*=*=*=*=*=*=*=*=*=*=*=*=*=");
+        // Using only sorted method to get ascending order by default
+        fruits.stream()
+                .sorted()
+                .forEach(System.out::println);
     }
 
 }
