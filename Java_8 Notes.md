@@ -177,7 +177,7 @@ Stream => Filter => Sort => Map => Collect/Reduce
 * It consumes the stream, executes the predicate (or condition), and returns the filtered stream which only satisfies the defined condition.
 * Hence, the resultant stream contains either same stream or a reduced stream (or we can say, "filtered" stream).
 
-### Sorted Method
+#### Sorted Method
 
 * It is an intermediate method applied to a stream.
 * It takes either nothing or a Comparator/Comparable functional interface as parameter.
