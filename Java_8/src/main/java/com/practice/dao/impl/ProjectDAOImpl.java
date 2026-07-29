@@ -14,7 +14,7 @@ public class ProjectDAOImpl extends DBUtils implements ProjectDAO {
 
     public List<Employee> getEmployees() {
         List<Employee> employeeList = null;
-        String query = " select * from test_employee_details ";
+        String query = " SELECT * FROM test_employee_details ORDER BY employee_id FETCH FIRST 5 ROWS ONLY ";
         try {
             employeeList = getJdbcTemplate().query(query, new EmployeeRowMapper());
         } catch (Exception e) {
