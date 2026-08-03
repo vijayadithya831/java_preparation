@@ -1,2 +1,16 @@
-SELECT * FROM test_employee_details ORDER BY employee_id FETCH FIRST 5 ROWS ONLY;
+SELECT * FROM test_employee_details ORDER BY employee_id FETCH FIRST 10 ROWS ONLY;
 
+CREATE TABLE USER_OBJECT (
+    USER_ID NUMBER PRIMARY KEY,
+    USERNAME VARCHAR2(100),
+    PASSWORD VARCHAR2(100),
+    EMAIL VARCHAR2(100)
+);COMMIT;
+
+
+INSERT INTO USER_OBJECT VALUES (101, 'Ramesh', 'ramesh@123', 'ramesh07@gmail.com');
+INSERT INTO USER_OBJECT VALUES (102, 'Tony', 'tony@123', 'tony3000@gmail.com');
+INSERT INTO USER_OBJECT VALUES (103, 'Tom', 'thomas@123', 'tom.roxxx@gmail.com');
+COMMIT;
+
+SELECT * FROM USER_OBJECT;

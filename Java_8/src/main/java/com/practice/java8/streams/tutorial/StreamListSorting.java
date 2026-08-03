@@ -4,7 +4,6 @@ import com.practice.dao.impl.ProjectDAOImpl;
 import com.practice.dao.interfaces.ProjectDAO;
 import com.practice.model.Employee;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -31,7 +30,7 @@ public class StreamListSorting {
 
 //        System.out.println("*=*=*=*=*=*=*=*=*=*=*=*=*=*=");
         // Using only sorted method to get ascending order by default
-//        fruits.stream().sorted().forEach(System.out::println);
+        fruits.stream().sorted().forEach(System.out::println);
 
         // Sorting a list of employees based on their salary
         List<Employee> employeeList = projectDAO.getEmployees();
@@ -39,6 +38,22 @@ public class StreamListSorting {
         List<Employee> sortedList = employeeList.stream()
                 .sorted((o1, o2)  -> (o2.getSalary().subtract(o1.getSalary())).intValue()                    )
                 .collect(Collectors.toList());
+
+        List<Employee> sortedList1 = employeeList.stream()
+                .sorted(Comparator.comparing(Employee::getSalary))
+//                        .thenComparing(Employee::getAge))
+                .collect(Collectors.toList());
+
+//        List<Employee> sortedList2 = employeeList.stream()
+//                .sorted(Comparator.comparing(Employee::getSalary)
+//                        .thenComparing(Employee::getEmpId))
+//                .collect(Collectors.toList());
+
+        sortedList.forEach(System.out::println);
+        System.out.println("*****************");
+        sortedList1.forEach(System.out::println);
+        System.out.println("*****************");
+//        sortedList2.forEach(System.out::println);
     }
 
 

@@ -6,7 +6,7 @@ import com.practice.model.Employee;
 
 import java.util.List;
 
-public class EmployeeTest {
+public class EmployeeFetchTest {
 
     private static final ProjectDAO projectDAO = new ProjectDAOImpl();
 

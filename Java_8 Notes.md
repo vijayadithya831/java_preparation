@@ -184,3 +184,7 @@ Stream => Filter => Sort => Map => Collect/Reduce
 * If the sorted method is called without any parameter, it returns the stream sorted in ascending order by default.
 * If parameter is passed, it consumes the stream, executes the Comparator/Comparable logic passed, and then sorts according to the conditions and returns the stream for collection.
 
+#### Map Method
+
+* It is an intermediate method applied to a stream.
+* 
