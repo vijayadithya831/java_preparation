@@ -1,7 +1,11 @@
 package com.practice.dao.interfaces;
 
+import com.practice.model.Employee;
+import com.practice.model.User;
+
 import java.util.List;
 
 public interface ProjectDAO {
-    List getEmployees();
+    List<Employee> getEmployees();
+    List<User> getUsers();
 }
