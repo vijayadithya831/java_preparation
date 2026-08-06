@@ -187,4 +187,15 @@ Stream => Filter => Sort => Map => Collect/Reduce
 #### Map Method
 
 * It is an intermediate method applied to a stream.
+* It takes a Function functional interface as parameter, which defines the input type and return type.
+* It is used to map one type of collection to another type of collection. Example used is mapping User object to UserDTO object in code.
+
+#### Collect Method
+
+* It is a terminal method applied to a stream.
+* It takes the resultant stream of the intermediate methods as parameter and returns the stream into desired collection.
+* It basically "collects" the stream into whatever return type we are providing.
+
+#### FindFirst and FindAny Methods
+
 * 
