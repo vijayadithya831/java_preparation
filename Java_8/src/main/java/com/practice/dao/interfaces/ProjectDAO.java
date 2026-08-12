@@ -8,4 +8,5 @@ import java.util.List;
 public interface ProjectDAO {
     List<Employee> getEmployees();
     List<User> getUsers();
+    List<Employee> getEmployeeNameAndAge();
 }

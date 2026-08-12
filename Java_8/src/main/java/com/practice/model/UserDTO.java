@@ -6,6 +6,12 @@ public class UserDTO {
     private String username;
     private String email;
 
+    public UserDTO(int id, String username, String email) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+    }
+
     public int getId() {
         return id;
     }
@@ -32,8 +38,8 @@ public class UserDTO {
 
     @Override
     public String toString() {
-        return "User{" +
-                "id='" + id + '\'' +
+        return "UserDTO{" +
+                "id=" + id +
                 ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
                 '}';

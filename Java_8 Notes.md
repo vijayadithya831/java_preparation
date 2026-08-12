@@ -119,7 +119,7 @@ Note to self: Optional class is NOT a replacement for any collections framework 
 
 1. Optional.of(value) -> This method takes a value of any type, stores in an Optional object and returns the same to the variable when called. value should not be null, otherwise NullPointerException is thrown.
 2. Optional.empty() -> This method basically returns the new object of the optional class. If we print the empty object, Optional class's toString method is called and "Optional.empty" is written to the console.
-3. Optional.ofNnullable(value) -> As the name suggests, this class can choose between returning an empty Optional object or an Optional object holding some value based on the argument given to it. If the value is null, then Optional.empty, otherwile new Optional<>(value) is returned. It does not throw NullPointerException if null is passed as argument.
+3. Optional.ofNnullable(value) -> As the name suggests, this class can choose between returning an empty Optional object or an Optional object holding some value based on the argument given to it. If the value is null, then Optional.empty(), otherwile new Optional<>(value) is returned. It does not throw NullPointerException if null is passed as argument.
 
 ##### Non-static Methods in optional class
 
@@ -129,8 +129,9 @@ Note to self: Optional class is NOT a replacement for any collections framework 
 4. orElseThrow() ->  This method is applied to an object of the Optional class. It takes Supplier functional interface as parameter, which must throw an exception (existing or custom) if the value in the optional is null.
 5. isPresent() ->  This method is applied to an object of the Optional class. It checks whether the value inside the Optional is null and returns the boolean equivalant accordingly.
 6. ifPresent() ->  This method is applied to an object of the Optional class. It takes Consumer functional interface as parameter, which takes the value inside the optional as the lambda object and executes the void method defined in the lambda. Key difference is, the lambda inside the ifPresent method is executed when and only when the value inside the optional is not null.
-7. filter() ->  This method is applied to an object of the Optional class or used as an intermediate operation. It takes Predicate functional interface as parameter, which determines whether a condition is satisfied or not which is implemented in the lambda.
-8. map() -> This method is applied to an object of the Optional class or used as an intermediate operation. It takes Function functional interface as parameter, which takes a value as input, processes the logic given as implementation (either lambda or method reference), produces the output, and maps the value to the same index as it gets from the input. Basically, we can use map method to transform a value in an Optional from one type to another type.
+7. ifPresentOrElse() -> This method is applied to an object of the Optional class. It takes Consumer functional interface and a Runnable functional interface as parameters. The Consumer's accept method is called when there is element present in the Optional object. The Runnable method implementation is executed when the Optional object does not have any element.
+8. filter() ->  This method is applied to an object of the Optional class or used as an intermediate operation. It takes Predicate functional interface as parameter, which determines whether a condition is satisfied or not which is implemented in the lambda.
+9. map() -> This method is applied to an object of the Optional class or used as an intermediate operation. It takes Function functional interface as parameter, which takes a value as input, processes the logic given as implementation (either lambda or method reference), produces the output, and maps the value to the same index as it gets from the input. Basically, we can use map method to transform a value in an Optional from one type to another type.
 
 ### [Default Methods in Interfaces](https://www.geeksforgeeks.org/java/default-methods-java/)
 
@@ -187,4 +188,31 @@ Stream => Filter => Sort => Map => Collect/Reduce
 #### Map Method
 
 * It is an intermediate method applied to a stream.
-* 
+* It takes a Function functional interface as parameter, which defines the input type and return type.
+* It is used to map one type of collection to another type of collection. Example used is mapping User object to UserDTO object in code.
+
+#### Collect Method
+
+* It is a terminal method applied to a stream.
+* It takes the resultant stream of the intermediate methods as parameter and returns the stream into desired collection.
+* It basically "collects" the stream into whatever return type we are providing.
+
+#### FindFirst and FindAny Methods
+
+* findFirst() -> This method is applied to a stream to get the first element of the stream. This method has Optional<T> as the return type, where T is the type of data produced while calling the findFirst() method in the stream pipeline. If no element is present in the stream, it returns Optional.empty().
+* findAny() -> This method is applied to a stream to get any element present in the stream. This can be useful in parallel streams where multiple threads from an intermediate operation trying to fetch any element in the stream. This method has Optional<T> as the return type, where T is the type of data produced while calling the findFirst() method in the stream pipeline. If no element is present in the stream, it returns Optional.empty().
+
+#### Count, Min and Max Methods
+
+* count() -> This is a terminal method, which consumes a stream and returns the count of the stream. It's return type is long.
+* min() -> This is a terminal method, which consumes a stream and returns the least value present in the stream. It requires a Comparater functional interface as parameter, in which comparing method is called along with a Function parameter which defines the deciding criteria for min method to evaluate.
+* max() -> This is a terminal method, which consumes a stream and returns the least value present in the stream. It requires a Comparater functional interface as parameter, in which comparing method is called along with a Function parameter which defines the deciding criteria for max method to evaluate.
+
+#### Java 8 ForEach Method
+
+* Java 8 forEach method is used to apply advanced for loops in a more efficient way to the objects which implements Iterable interface in their Class signature. It takes Consumer functional interface as parameter.
+
+### More Functional Interfaces
+
+#### BiFunction, BiConsumer, BiPredicate
+
