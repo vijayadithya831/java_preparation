@@ -67,4 +67,25 @@ public class ProjectDAOImpl extends DBUtils implements ProjectDAO {
             return user;
         }
     }
+
+    public List<Employee> getEmployeeNameAndAge() {
+        List<Employee> employeeList = null;
+        String query = "SELECT EMPLOYEE_NAME, AGE FROM TEST_EMPLOYEE_DETAILS FETCH FIRST 3 ROWS ONLY";
+        try {
+            employeeList = getJdbcTemplate().query(query, new EmployeeNameRowMapper());
+        } catch (Exception e) {
+            System.out.println("Exception Occurred: " + e);
+            e.printStackTrace();
+        }
+        return employeeList;
+    }
+
+    public class EmployeeNameRowMapper implements RowMapper<Employee> {
+        public Employee mapRow(ResultSet rs, int rowNum) throws SQLException {
+            Employee employee = new Employee();
+            employee.setEmpName(rs.getString("EMPLOYEE_NAME"));
+            employee.setAge(rs.getInt("AGE"));
+            return employee;
+        }
+    }
 }
