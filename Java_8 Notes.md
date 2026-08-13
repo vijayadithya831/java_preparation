@@ -216,3 +216,9 @@ Stream => Filter => Sort => Map => Collect/Reduce
 
 #### BiFunction, BiConsumer, BiPredicate
 
+* BiFunction, BiConsumer and BiPredicate is all similar to Function, Consumer and Predicate Functional interfaces. The only difference is, Function's apply method takes "one parameter" and returns one result of the specified return type, Consumer's accept method takes "one parameter", Predicate's test method takes "one parameter" and returns one boolean result.
+* BiFunction's apply method takes "two parameters" and returns one result of the specified return type.
+* BoConsumer's accept method takes "two parameters".
+* BiPredicate's test method takes "two parameters" and returns one boolean result.
+* Hence the prefix "Bi", indicating "two". These functional interfaces are called **Binary Functions** because they take two parameters for processing.
+

@@ -1,4 +1,4 @@
-package com.practice.java8.functional;
+package com.practice.java8.functional.unary;
 
 import java.time.LocalDateTime;
 import java.util.function.*;
