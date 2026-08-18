@@ -22,6 +22,10 @@
 * Predicate< T > => this interface has the method test(T t). Which means it takes the input of type T and returns the boolean output. We can pass a string and define a condition in the method implementation so that the test method tests whether the given input string passes the condition or not, hence returning the boolean result.
 * For more Functional Interfaces present in java, [Click Here](https://www.educative.io/answers/a-list-of-all-the-functional-interfaces-in-java)
 
+##### Bonus points
+* UnaryOperator< T,T > => This is a specialized Function<>, whose apply() method takes one parameter as input and returns one value as output, **where the input parameter type and the return type are the same**.
+* BinaryOperator< T,T,T > => This is a specialized BiFunction<>, whose apply() method takes two parameters as input and returns one value as output, **where the input parameter types and the return type are the same**.
+
 ### [Lambda Expressions](https://www.geeksforgeeks.org/java/lambda-expressions-java-8/)
 
 * Lambda Expression facilitates functional programming in java.
@@ -216,3 +220,8 @@ Stream => Filter => Sort => Map => Collect/Reduce
 
 #### BiFunction, BiConsumer, BiPredicate
 
+* BiFunction, BiConsumer and BiPredicate is all similar to Function, Consumer and Predicate Functional interfaces. The only difference is, Function's apply method takes "one parameter" and returns one result of the specified return type, Consumer's accept method takes "one parameter", Predicate's test method takes "one parameter" and returns one boolean result.
+* BiFunction's apply method takes "two parameters" and returns one result of the specified return type.
+* BoConsumer's accept method takes "two parameters".
+* BiPredicate's test method takes "two parameters" and returns one boolean result.
+* Hence the prefix "Bi", indicating "two". These functional interfaces are called **Binary Functions** because they take two parameters for processing.
