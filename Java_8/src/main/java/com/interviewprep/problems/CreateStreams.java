@@ -7,6 +7,7 @@ import com.practice.model.Employee;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class CreateStreams {
@@ -34,8 +35,20 @@ public class CreateStreams {
         // 2. Array -> Stream
         Stream<String> stream2 = Arrays.stream(empNamesArray);
 
-        
+        // 3. Stream.of() method
+        Stream<Integer> stream3 = Stream.of(1,2,3,4,5);
 
+        // 4. Stream.generate() method
+        Stream<Double> stream4 = Stream.generate(Math::random).limit(5);
+
+        stream1.forEach(System.out::println);
+        System.out.println();
+        stream2.forEach(System.out::println);
+        System.out.println();
+        stream3.forEach(System.out::println);
+        System.out.println();
+        stream4.forEach(System.out::println);
+        System.out.println();
     }
 
 }
